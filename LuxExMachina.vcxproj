@@ -85,12 +85,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Character.cpp" />
+    <ClCompile Include="src\FlyingCharacter.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Taiyo.cpp" />
+    <ClCompile Include="src\WalkingCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character.h" />
+    <ClInclude Include="include\FlyingCharacter.h" />
     <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\Taiyo.h" />
+    <ClInclude Include="include\WalkingCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

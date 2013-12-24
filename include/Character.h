@@ -30,10 +30,10 @@ enum class MovingState {
 };
 
 class Character {
-private:
+protected:
 	// Sprite parameters
+	sf::RectangleShape m_sprite;
 	sf::Texture m_texture;
-	std::string m_texturePath;
 	sf::Time m_animationTime;
 
 	// State flags
@@ -42,17 +42,15 @@ private:
 	PassiveState m_passiveState;
 	MovingState m_movingState;
 
-	// Moving parameters
-	float m_movingSpeed;
-	float m_jumpingHeight;
-
 public:
-	sf::RectangleShape m_sprite;
 	Character(const sf::Vector2f& size, const std::string& texturePath);
-	void animate(const sf::Time& elapsed);
-	void moveRight();
-	void moveLeft();
-	void jump();
+	inline const sf::RectangleShape& getSprite() const {
+		return m_sprite;
+	}
+	virtual void animate(const sf::Time& elapsed) = 0;
+	virtual void moveRight() = 0;
+	virtual void moveLeft() = 0;
+	//virtual void moveToPosition(const sf::Vector2f& position) = 0;
 };
 
 #endif // CHARACTER_H
