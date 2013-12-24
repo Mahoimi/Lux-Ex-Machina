@@ -5,6 +5,8 @@
 
 class Taiyo : public WalkingCharacter {
 private:
+	void inputControl();
+	void jump();
 public:
 	Taiyo();
 	void animate(const sf::Time& elapsed);
