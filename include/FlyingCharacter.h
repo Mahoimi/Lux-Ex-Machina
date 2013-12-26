@@ -12,7 +12,7 @@ protected:
 	void flyLeft();
 
 public:
-	FlyingCharacter(const sf::Vector2f& size, const sf::IntRect& textureZone, const std::string& texturePath, float flyingSpeed);
+	FlyingCharacter(const sf::Vector2f& position, const sf::IntRect& textureZone, const std::string& texturePath, float flyingSpeed);
 	virtual void animate(const sf::Time& elapsed) = 0;
 };
 

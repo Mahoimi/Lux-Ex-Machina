@@ -1,7 +1,7 @@
 #include <FlyingCharacter.h>
 
-FlyingCharacter::FlyingCharacter(const sf::Vector2f& size, const sf::IntRect& textureZone, const std::string& texturePath, float flyingSpeed):
-	Character(size, textureZone, texturePath),
+FlyingCharacter::FlyingCharacter(const sf::Vector2f& position, const sf::IntRect& textureZone, const std::string& texturePath, float flyingSpeed):
+	Character(position, textureZone, texturePath),
 	m_flyingSpeed(flyingSpeed){
 
 }
