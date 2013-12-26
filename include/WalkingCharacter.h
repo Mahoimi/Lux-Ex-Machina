@@ -6,14 +6,14 @@
 class WalkingCharacter : public Character {
 protected:
 	static float m_gravity;
-	float m_movingSpeed;
-	float m_jumpingHeight;
-	float m_fallingSpeed;
+	float m_jumpingVelocity;
+	float m_dx;
+	float m_dy;
 	void moveRight();
 	void moveLeft();
-	void physics();
-
-	virtual void jump();
+	void jump();
+	
+	virtual void physics();
 public:
 	WalkingCharacter(const sf::Vector2f& size, const sf::IntRect& textureZone, const std::string& texturePath, float movingSpeed, float jumpingHeight);
 	virtual void animate(const sf::Time& elapsed) = 0;

@@ -5,11 +5,14 @@
 
 class Taiyo : public WalkingCharacter {
 private:
+	bool m_hasJumped;
+	float m_totalHeight;
 	void inputControl();
-	void jump();
+	void physics();
 public:
 	Taiyo();
 	void animate(const sf::Time& elapsed);
+	
 };
 
 #endif // TAIYO_H

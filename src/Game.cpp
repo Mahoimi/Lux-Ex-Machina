@@ -3,7 +3,7 @@
 
 Game::Game():m_window(sf::VideoMode(1600, 900), "Lux Ex Machina"),m_isRunning(false){
 	m_window.setVerticalSyncEnabled(true);
-	m_window.setKeyRepeatEnabled(false);
+	//m_window.setKeyRepeatEnabled(false);
 }
 
 void Game::start(){
