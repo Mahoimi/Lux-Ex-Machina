@@ -1,6 +1,6 @@
 #include <Game.h>
 
-Game::Game():m_window(sf::VideoMode(1600, 900), "Lux Ex Machina"),m_isRunning(false){
+Game::Game():m_window(sf::VideoMode::getDesktopMode(), "Lux Ex Machina",sf::Style::Fullscreen),m_isRunning(false){
 	m_window.setVerticalSyncEnabled(true);
 	m_window.setKeyRepeatEnabled(false);
 }

@@ -5,7 +5,10 @@
 
 class FlyingCharacter : public Character {
 protected:
+	static float m_maxFlyingSpeed;
 	float m_flyingSpeed;
+	float m_dx;
+	float m_dy;
 	void flyUp();
 	void flyDown();
 	void flyRight();

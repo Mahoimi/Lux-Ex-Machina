@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="src\Character.cpp" />
     <ClCompile Include="src\FlyingCharacter.cpp" />
+    <ClCompile Include="src\FlyingTaiyo.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Taiyo.cpp" />
@@ -94,6 +95,7 @@
   <ItemGroup>
     <ClInclude Include="include\Character.h" />
     <ClInclude Include="include\FlyingCharacter.h" />
+    <ClInclude Include="include\FlyingTaiyo.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\Taiyo.h" />
     <ClInclude Include="include\WalkingCharacter.h" />
