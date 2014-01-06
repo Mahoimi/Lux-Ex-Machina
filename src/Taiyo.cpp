@@ -22,7 +22,7 @@ void Taiyo::inputControl(){
 
 void Taiyo::physics(){
 	// TODO : Replace m_sprite.getPosition().y < 800.f by !checkGround()
-	if (m_sprite.getPosition().y < 800.f || m_movingState == MovingState::JUMPING){
+	if (m_sprite.getPosition().y < 510.f || m_movingState == MovingState::JUMPING){
 		if (!m_hasJumped && sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_totalHeight < 200.f){
 			m_totalHeight += -m_dy;
 		}
@@ -37,10 +37,10 @@ void Taiyo::physics(){
 		if (m_dy > 0){
 			if (m_movingState != MovingState::FALLING) setMovingState(MovingState::FALLING);
 
-			if (m_sprite.getPosition().y + m_dy >= 800.f){
+			if (m_sprite.getPosition().y + m_dy >= 510.f){
 				m_dy = 0.f;
 				setMovingState(MovingState::IDLE);
-				m_sprite.setPosition(m_sprite.getPosition().x, 800.f);
+				m_sprite.setPosition(m_sprite.getPosition().x, 510.f);
 				m_totalHeight = 0.f;
 				m_hasJumped = false;
 			}
@@ -62,7 +62,7 @@ void Taiyo::animate(const sf::Time& elapsed){
 	// Displaying action
 	switch (m_movingState){
 		case MovingState::IDLE:
-			std::cout << "IDLE" << std::endl;
+			// std::cout << "IDLE" << std::endl;
 			if (m_animationTime.asMilliseconds() < 6000){
 				m_sprite.setTextureRect(sf::IntRect(320, 15, 36, 39));
 			}
@@ -78,7 +78,7 @@ void Taiyo::animate(const sf::Time& elapsed){
 			}
 			break;
 		case MovingState::RUNNING:
-			std::cout << "RUNNING" << std::endl;
+			// std::cout << "RUNNING" << std::endl;
 			if (m_animationTime.asMilliseconds() < animDelay){
 				m_sprite.setTextureRect(sf::IntRect(104,104,32,38));
 			}
@@ -118,10 +118,10 @@ void Taiyo::animate(const sf::Time& elapsed){
 			}
 			break;
 		case MovingState::JUMPING:
-			std::cout << "JUMPING" << std::endl;
+			// std::cout << "JUMPING" << std::endl;
 			break;
 		case MovingState::FALLING:
-			std::cout << "FALLING" << std::endl;
+			// std::cout << "FALLING" << std::endl;
 			break;
 	}
 }

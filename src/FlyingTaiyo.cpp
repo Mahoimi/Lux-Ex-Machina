@@ -57,7 +57,6 @@ void FlyingTaiyo::animate(const sf::Time& elapsed){
 	// Displaying action
 	switch (m_movingState){
 		case MovingState::IDLE:
-			std::cout << "IDLE" << std::endl;
 			if (m_animationTime.asMilliseconds() < 6000){
 				m_sprite.setTextureRect(sf::IntRect(320, 15, 36, 39));
 			}
@@ -73,7 +72,6 @@ void FlyingTaiyo::animate(const sf::Time& elapsed){
 			}
 			break;
 		case MovingState::FLYING:
-			std::cout << "FLYING" << std::endl;
 			break;
 	}
 }
