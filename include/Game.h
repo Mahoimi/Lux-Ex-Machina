@@ -8,12 +8,13 @@
 class Game {
 private:
 	GameObject m_taiyo;
+	GameObject* m_maps[5];
 	sf::RenderWindow m_window;
-	//TileMap m_map[5];
 	bool m_isRunning;
 
 public:
 	Game();
+	~Game();
 	void start();
 	void loop();
 	void exit();

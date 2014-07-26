@@ -5,10 +5,39 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Time.hpp>
 
+enum class FacingPosition {
+	RIGHT,
+	LEFT
+};
+
+enum class ActionState {
+	IDLE,
+	ATTACK,
+	HIJACK
+};
+
+enum class PassiveState {
+	IDLE,
+	HIT,
+	LOWBATTERY,
+	DIED
+};
+
+enum class MovingState {
+	IDLE,
+	RUNNING,
+	FALLING,
+	JUMPING,
+	SWIMING,
+	FLYING
+};
+
+
 class GraphicsComponent;
 class AIComponent;
 
 class GameObject {
+
 private:
 	GraphicsComponent* m_graphics;
 	AIComponent* m_ai;
@@ -18,6 +47,10 @@ public:
 	float m_positionX;
 	float m_positionY;
 	float dx, dy;
+	FacingPosition m_facingPosition;
+	MovingState m_movingState;
+	ActionState m_actionState;
+	PassiveState m_passiveState;
 
 	explicit GameObject(float positionX, float positionY, GraphicsComponent* = nullptr, AIComponent* = nullptr);
 	~GameObject();

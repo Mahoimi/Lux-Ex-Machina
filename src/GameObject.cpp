@@ -6,7 +6,11 @@ GameObject::GameObject(float positionX, float positionY, GraphicsComponent* grap
 	:	m_positionX(positionX),
 		m_positionY(positionY),
 		m_graphics(graphics),
-		m_ai(ai)
+		m_ai(ai),
+		m_facingPosition(FacingPosition::RIGHT),
+		m_movingState(MovingState::IDLE),
+		m_actionState(ActionState::IDLE),
+		m_passiveState(PassiveState::IDLE)
 {
 
 }

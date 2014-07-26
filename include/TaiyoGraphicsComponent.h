@@ -6,9 +6,7 @@
 class TaiyoGraphicsComponent : public GraphicsComponent 
 {
 private:
-	sf::Sprite m_standingSprite;
-	sf::Sprite m_jumpingSprite;
-	sf::Sprite m_runningSprite;
+	sf::Sprite m_sprite;
 
 public:
 	TaiyoGraphicsComponent();

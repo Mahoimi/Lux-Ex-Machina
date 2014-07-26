@@ -12,6 +12,18 @@ Game::Game()
 	m_window.setKeyRepeatEnabled(false);
 }
 
+Game::~Game()
+{
+	for(auto& map:m_maps)
+	{
+		if(map)
+		{
+			delete map;
+			map = nullptr;
+		}
+	}
+}
+
 void Game::start(){
 	if(!m_isRunning){
 		m_isRunning=true;
@@ -140,11 +152,10 @@ void Game::loop(){
 	mapsData[3] = map4;
 	mapsData[4] = map5;
 
-	GameObject* m_maps[5];
 	unsigned int i = 0;
 	for(auto& map: m_maps)
 	{
-		map = new GameObject(0.f, 0.f, new TilemapGraphicsComponent("img/map.png", sf::Vector2u(32,32), mapsData[i], 25, 19));
+		map = new GameObject(0.f, 0.f, new TilemapGraphicsComponent("img/map.png", 32, 32, mapsData[i], 25, 19));
 		++i;
 	}
 
