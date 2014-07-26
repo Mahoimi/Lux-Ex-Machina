@@ -1,6 +1,12 @@
 #include <Game.h>
+#include <TaiyoGraphicsComponent.h>
+#include <InputComponent.h>
 
-Game::Game():m_window(sf::VideoMode(800, 608), "Lux Ex Machina"),m_isRunning(false){
+Game::Game()
+	:	m_window(sf::VideoMode(800, 608), "Lux Ex Machina"),
+		m_isRunning(false),
+		m_taiyo(400.f, 300.f, new TaiyoGraphicsComponent(), new InputComponent())
+{
 	m_window.setVerticalSyncEnabled(true);
 	m_window.setKeyRepeatEnabled(false);
 }
@@ -146,10 +152,16 @@ void Game::loop(){
 
 		if (m_isRunning) {
 			m_window.clear();
-			m_character.animate(elapsed);
+			
+			// Update the GameObjects
+			m_taiyo.update(elapsed);
+
+			// Draw the sprites
 			for (unsigned int i = 0; i < 5; ++i)
 				m_window.draw(m_map[i]);
-			m_window.draw(m_character.getSprite());
+			m_taiyo.draw(m_window);
+
+			// Display the window
 			m_window.display();
 		}
 	}

@@ -1,14 +1,14 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <Taiyo.h>
+#include <GameObject.h>
 #include <Tilemap.h>
 #include <SFML/Graphics.hpp>
 
 class Game {
 private:
+	GameObject m_taiyo;
 	sf::RenderWindow m_window;
-	Taiyo m_character;
 	TileMap m_map[5];
 	bool m_isRunning;
 
