@@ -3,13 +3,13 @@
 
 #include <GameObject.h>
 #include <Tilemap.h>
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class Game {
 private:
 	GameObject m_taiyo;
 	sf::RenderWindow m_window;
-	TileMap m_map[5];
+	//TileMap m_map[5];
 	bool m_isRunning;
 
 public:

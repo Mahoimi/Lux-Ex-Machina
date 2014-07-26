@@ -1,13 +1,18 @@
-#ifndef TAIYOGRAPHICSCOMPONENT_H
-#define TAIYOGRAPHICSCOMPONENT_H
+#ifndef TAIYO_GRAPHICS_COMPONENT_H
+#define TAIYO_GRAPHICS_COMPONENT_H
 
 #include <GraphicsComponent.h>
 
-class TaiyoGraphicsComponent : public GraphicsComponent {
+class TaiyoGraphicsComponent : public GraphicsComponent 
+{
+private:
+	sf::Sprite m_standingSprite;
+	sf::Sprite m_jumpingSprite;
+	sf::Sprite m_runningSprite;
+
 public:
 	TaiyoGraphicsComponent();
-	void update(GameObject& gameObject, const sf::Time& elapsed);
-
+	void update(const GameObject& gameObject, const sf::Time&, sf::RenderWindow&) override;
 };
 
-#endif // TAIYOGRAPHICSCOMPONENT_H
+#endif // TAIYO_GRAPHICS_COMPONENT_H

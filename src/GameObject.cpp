@@ -20,15 +20,10 @@ GameObject::~GameObject()
 		delete m_graphics;
 }
 
-void GameObject::draw(sf::RenderWindow& window) const {
-		if (m_graphics) 
-			m_graphics->draw(window);
-}
-
-void GameObject::update(const sf::Time& elapsed){
+void GameObject::update(const sf::Time& elapsed, sf::RenderWindow& window){
 	if (m_ai) 
 		m_ai->update(*this);
 
 	if (m_graphics) 
-		m_graphics->update(*this, elapsed);
+		m_graphics->update(*this, elapsed, window);
 }

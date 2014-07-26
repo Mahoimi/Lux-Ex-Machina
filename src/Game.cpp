@@ -1,11 +1,12 @@
 #include <Game.h>
 #include <TaiyoGraphicsComponent.h>
+#include <TilemapGraphicsComponent.h>
 #include <InputComponent.h>
 
 Game::Game()
 	:	m_window(sf::VideoMode(800, 608), "Lux Ex Machina"),
 		m_isRunning(false),
-		m_taiyo(400.f, 300.f, new TaiyoGraphicsComponent(), new InputComponent())
+		m_taiyo(400.f, 300.f, new TaiyoGraphicsComponent, new InputComponent)
 {
 	m_window.setVerticalSyncEnabled(true);
 	m_window.setKeyRepeatEnabled(false);
@@ -20,6 +21,8 @@ void Game::start(){
 
 void Game::loop(){
 	sf::Clock clock;
+
+	const int* mapsData[5];
 
 	const int map1[] =  {
 	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
@@ -131,11 +134,19 @@ void Game::loop(){
 	61,61,61,61,61,61,61,61,61,61,61,52,3,3,3,3,3,3,3,3,3,3,3,3,3
 	};
 
-	m_map[0].load("img/map.png", sf::Vector2u(32,32), map1, 25, 19);
-	m_map[1].load("img/map.png", sf::Vector2u(32,32), map2, 25, 19);
-	m_map[2].load("img/map.png", sf::Vector2u(32,32), map3, 25, 19);
-	m_map[3].load("img/map.png", sf::Vector2u(32,32), map4, 25, 19);
-	m_map[4].load("img/map.png", sf::Vector2u(32,32), map5, 25, 19);
+	mapsData[0] = map1;
+	mapsData[1] = map2;
+	mapsData[2] = map3;
+	mapsData[3] = map4;
+	mapsData[4] = map5;
+
+	GameObject* m_maps[5];
+	unsigned int i = 0;
+	for(auto& map: m_maps)
+	{
+		map = new GameObject(0.f, 0.f, new TilemapGraphicsComponent("img/map.png", sf::Vector2u(32,32), mapsData[i], 25, 19));
+		++i;
+	}
 
 	while (m_window.isOpen()) {
 		sf::Time elapsed = clock.restart();
@@ -152,14 +163,12 @@ void Game::loop(){
 
 		if (m_isRunning) {
 			m_window.clear();
-			
-			// Update the GameObjects
-			m_taiyo.update(elapsed);
 
-			// Draw the sprites
-			for (unsigned int i = 0; i < 5; ++i)
-				m_window.draw(m_map[i]);
-			m_taiyo.draw(m_window);
+			// Update the GameObjects
+			for(auto& map:m_maps)
+				map->update(elapsed, m_window);
+
+			m_taiyo.update(elapsed, m_window);
 
 			// Display the window
 			m_window.display();

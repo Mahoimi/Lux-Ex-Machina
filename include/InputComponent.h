@@ -1,5 +1,5 @@
-#ifndef INPUTCOMPONENT_H
-#define INPUTCOMPONENT_H
+#ifndef INPUT_COMPONENT_H
+#define INPUT_COMPONENT_H
 
 #include <AIComponent.h>
 

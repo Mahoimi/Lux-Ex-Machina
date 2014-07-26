@@ -32,8 +32,7 @@ public:
 		return m_positionY;
 	}
 
-	void draw(sf::RenderWindow&) const;
-	void update(const sf::Time&);
+	void update(const sf::Time&, sf::RenderWindow&);
 
 };
 
