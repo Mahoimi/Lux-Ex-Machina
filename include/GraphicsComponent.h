@@ -1,12 +1,13 @@
-#ifndef GRAPHICSCOMPONENT_H
-#define GRAPHICSCOMPONENT_H
-
-class GameObject;
+#ifndef LUX_GRAPHICSCOMPONENT_H
+#define LUX_GRAPHICSCOMPONENT_H
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/System/Time.hpp>
+
+namespace Lux {
+class GameObject;
 
 class GraphicsComponent {
 protected:
@@ -18,5 +19,6 @@ public:
 	virtual void update(const GameObject&, const sf::Time&, sf::RenderWindow&) = 0;
 	
 };
+}
 
-#endif // GRAPHICSCOMPONENT_H
+#endif // LUX_GRAPHICSCOMPONENT_H

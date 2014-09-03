@@ -1,47 +1,25 @@
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
+#ifndef LUX_GAMEOBJECT_H
+#define LUX_GAMEOBJECT_H
 
 #include <memory>
+
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Time.hpp>
 
-enum class FacingPosition {
-	RIGHT,
-	LEFT
-};
+#include "States.h"
 
-enum class ActionState {
-	IDLE,
-	ATTACK,
-	HIJACK
-};
-
-enum class PassiveState {
-	IDLE,
-	HIT,
-	LOWBATTERY,
-	DIED
-};
-
-enum class MovingState {
-	IDLE,
-	RUNNING,
-	FALLING,
-	JUMPING,
-	SWIMING,
-	FLYING
-};
-
+namespace Lux {
 
 class GraphicsComponent;
 class AIComponent;
+class PhysicsComponent;
 
 class GameObject {
 
 private:
-	GraphicsComponent* m_graphics;
-	AIComponent* m_ai;
-	// PhysicsComponent
+	std::unique_ptr<GraphicsComponent> m_graphics;
+	std::unique_ptr<AIComponent> m_ai;
+	std::unique_ptr<PhysicsComponent> m_physics;
 
 public:
 	float m_positionX;
@@ -52,7 +30,7 @@ public:
 	ActionState m_actionState;
 	PassiveState m_passiveState;
 
-	explicit GameObject(float positionX, float positionY, GraphicsComponent* = nullptr, AIComponent* = nullptr);
+    GameObject(float positionX, float positionY, GraphicsComponent* = nullptr, AIComponent* = nullptr, PhysicsComponent* = nullptr);
 	~GameObject();
 
 	float posX() const
@@ -68,5 +46,6 @@ public:
 	void update(const sf::Time&, sf::RenderWindow&);
 
 };
+}
 
-#endif // GAMEOBJECT_H
+#endif // LUX_GAMEOBJECT_H

@@ -1,9 +1,10 @@
-#ifndef TILEMAP_GRAPHICS_COMPONENT_H
-#define TILEMAP_GRAPHICS_COMPONENT_H
+#ifndef LUX_TILEMAP_GRAPHICS_COMPONENT_H
+#define LUX_TILEMAP_GRAPHICS_COMPONENT_H
 
 #include "GraphicsComponent.h"
 #include "Tilemap.h"
 
+namespace Lux {
 class TilemapGraphicsComponent : public GraphicsComponent
 {
 private:
@@ -15,6 +16,7 @@ public:
 
 	void update(const GameObject&, const sf::Time&, sf::RenderWindow&) override;
 };
+}
 
 #endif // TILEMAP_GRAPHICS_COMPONENT_H
 

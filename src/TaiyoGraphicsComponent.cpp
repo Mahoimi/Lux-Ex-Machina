@@ -1,6 +1,8 @@
 #include "TaiyoGraphicsComponent.h"
+
 #include "GameObject.h"
 
+namespace Lux {
 TaiyoGraphicsComponent::TaiyoGraphicsComponent()
 {
 	if (m_texture.loadFromFile("img/megaman.png")){
@@ -92,4 +94,5 @@ void TaiyoGraphicsComponent::update(const GameObject& gameObject, const sf::Time
 	m_sprite.setPosition(sf::Vector2f(gameObject.posX(), gameObject.posY()));
 
 	window.draw(m_sprite);
+}
 }

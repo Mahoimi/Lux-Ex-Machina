@@ -1,10 +1,12 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef LUX_GAME_H
+#define LUX_GAME_H
 
-#include <GameObject.h>
-#include <Tilemap.h>
 #include <SFML/Graphics/RenderWindow.hpp>
 
+#include "GameObject.h"
+#include "Tilemap.h"
+
+namespace Lux {
 class Game {
 private:
 	GameObject m_taiyo;
@@ -15,9 +17,11 @@ private:
 public:
 	Game();
 	~Game();
+
 	void start();
 	void loop();
 	void exit();
 };
+}
 
-#endif // GAME_H
+#endif // LUX_GAME_H

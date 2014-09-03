@@ -1,8 +1,9 @@
-#ifndef TAIYO_GRAPHICS_COMPONENT_H
-#define TAIYO_GRAPHICS_COMPONENT_H
+#ifndef LUX_TAIYO_GRAPHICS_COMPONENT_H
+#define LUX_TAIYO_GRAPHICS_COMPONENT_H
 
-#include <GraphicsComponent.h>
+#include "GraphicsComponent.h"
 
+namespace Lux {
 class TaiyoGraphicsComponent : public GraphicsComponent 
 {
 private:
@@ -12,5 +13,6 @@ public:
 	TaiyoGraphicsComponent();
 	void update(const GameObject& gameObject, const sf::Time&, sf::RenderWindow&) override;
 };
+}
 
-#endif // TAIYO_GRAPHICS_COMPONENT_H
+#endif // LUX_TAIYO_GRAPHICS_COMPONENT_H

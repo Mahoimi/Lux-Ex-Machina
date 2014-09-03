@@ -1,6 +1,7 @@
-#include <Tilemap.h>
+#include "Tilemap.h"
 
- void Tilemap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+namespace Lux {
+void Tilemap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	// apply the transform
 	states.transform *= getTransform();
 
@@ -49,3 +50,4 @@ bool Tilemap::load(const std::string& tileset, unsigned int tileWidth, unsigned 
 
     return true;
 }
+} // ns Lux

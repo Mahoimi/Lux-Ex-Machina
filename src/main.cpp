@@ -1,6 +1,6 @@
-#include <Game.h>
+#include "Game.h"
 
 void main() {
-	Game game;
+	Lux::Game game;
 	game.start();
 }

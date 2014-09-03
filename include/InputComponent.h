@@ -1,14 +1,15 @@
-#ifndef INPUT_COMPONENT_H
-#define INPUT_COMPONENT_H
+#ifndef LUX_INPUT_COMPONENT_H
+#define LUX_INPUT_COMPONENT_H
 
-#include <AIComponent.h>
+#include "AIComponent.h"
 
+namespace Lux {
 class InputComponent : public AIComponent {
 public:
 	InputComponent();
 	~InputComponent();
-	void update(GameObject&);
-	
+	void update(GameObject&) override;
 };
+}
 
-#endif // INPUTCOMPONENT_H
+#endif // LUX_INPUT_COMPONENT_H

@@ -1,6 +1,8 @@
 #include "TilemapGraphicsComponent.h"
+
 #include "GameObject.h"
 
+namespace Lux {
 TilemapGraphicsComponent::TilemapGraphicsComponent(const std::string& tileset, unsigned int tileWidth, unsigned int tileHeight, const int* tiles, unsigned int width, unsigned int height)
 {
 	m_tilemap.load(tileset, tileWidth, tileHeight, tiles, width, height);
@@ -16,4 +18,5 @@ void TilemapGraphicsComponent::update(const GameObject& gameObject, const sf::Ti
 	m_animationTime += elapsed;
 	m_tilemap.setPosition(gameObject.posX(), gameObject.posY());
 	window.draw(m_tilemap);
+}
 }

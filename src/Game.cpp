@@ -1,8 +1,12 @@
-#include <Game.h>
-#include <TaiyoGraphicsComponent.h>
-#include <TilemapGraphicsComponent.h>
-#include <InputComponent.h>
+#include "Game.h"
 
+#include <SFML\Window\Event.hpp>
+
+#include "TaiyoGraphicsComponent.h"
+#include "TilemapGraphicsComponent.h"
+#include "InputComponent.h"
+
+namespace Lux {
 Game::Game()
 	:	m_window(sf::VideoMode(800, 608), "Lux Ex Machina"),
 		m_isRunning(false),
@@ -191,3 +195,4 @@ void Game::exit(){
 	m_window.close();
 	m_isRunning = false;
 }
+} // ns Lux

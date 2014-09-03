@@ -84,33 +84,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Character.cpp" />
-    <ClCompile Include="src\FlyingCharacter.cpp" />
-    <ClCompile Include="src\FlyingTaiyo.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\InputComponent.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Taiyo.cpp" />
     <ClCompile Include="src\TaiyoGraphicsComponent.cpp" />
     <ClCompile Include="src\Tilemap.cpp" />
     <ClCompile Include="src\TilemapGraphicsComponent.cpp" />
-    <ClCompile Include="src\WalkingCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\AIComponent.h" />
-    <ClInclude Include="include\Character.h" />
-    <ClInclude Include="include\FlyingCharacter.h" />
-    <ClInclude Include="include\FlyingTaiyo.h" />
     <ClInclude Include="include\Game.h" />
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GraphicsComponent.h" />
     <ClInclude Include="include\InputComponent.h" />
-    <ClInclude Include="include\Taiyo.h" />
+    <ClInclude Include="include\PhysicsComponent.h" />
+    <ClInclude Include="include\States.h" />
     <ClInclude Include="include\TaiyoGraphicsComponent.h" />
     <ClInclude Include="include\Tilemap.h" />
     <ClInclude Include="include\TilemapGraphicsComponent.h" />
-    <ClInclude Include="include\WalkingCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
