@@ -22,9 +22,11 @@ private:
 	std::unique_ptr<PhysicsComponent> m_physics;
 
 public:
-	float m_positionX;
-	float m_positionY;
-	float dx, dy;
+	float m_position[2];
+	float m_vel[2];
+    float m_accel[2];
+    float m_force[2];
+    float m_mass;
 	FacingPosition m_facingPosition;
 	MovingState m_movingState;
 	ActionState m_actionState;
@@ -33,14 +35,19 @@ public:
     GameObject(float positionX, float positionY, GraphicsComponent* = nullptr, AIComponent* = nullptr, PhysicsComponent* = nullptr);
 	~GameObject();
 
-	float posX() const
+	const float* position() const
 	{
-		return m_positionX;
+		return m_position;
 	}
 
-	float posY() const
+	const float* velocity() const
 	{
-		return m_positionY;
+		return m_vel;
+	}
+
+    const float* acceleration() const
+	{
+		return m_accel;
 	}
 
 	void update(const sf::Time&, sf::RenderWindow&);

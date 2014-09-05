@@ -91,7 +91,7 @@ void TaiyoGraphicsComponent::update(const GameObject& gameObject, const sf::Time
 	}
 
 	m_animationTime += elapsed;
-	m_sprite.setPosition(sf::Vector2f(gameObject.posX(), gameObject.posY()));
+	m_sprite.setPosition(sf::Vector2f(gameObject.position()[0], gameObject.position()[1]));
 
 	window.draw(m_sprite);
 }

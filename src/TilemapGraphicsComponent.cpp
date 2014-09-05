@@ -16,7 +16,7 @@ TilemapGraphicsComponent::~TilemapGraphicsComponent()
 void TilemapGraphicsComponent::update(const GameObject& gameObject, const sf::Time& elapsed, sf::RenderWindow& window)
 {
 	m_animationTime += elapsed;
-	m_tilemap.setPosition(gameObject.posX(), gameObject.posY());
+	m_tilemap.setPosition(gameObject.position()[0], gameObject.position()[1]);
 	window.draw(m_tilemap);
 }
 }

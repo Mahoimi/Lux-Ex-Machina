@@ -5,12 +5,13 @@
 #include "TaiyoGraphicsComponent.h"
 #include "TilemapGraphicsComponent.h"
 #include "InputComponent.h"
+#include "PhysicsComponent.h"
 
 namespace Lux {
 Game::Game()
 	:	m_window(sf::VideoMode(800, 608), "Lux Ex Machina"),
 		m_isRunning(false),
-		m_taiyo(400.f, 300.f, new TaiyoGraphicsComponent, new InputComponent)
+		m_taiyo(400.f, 300.f, new TaiyoGraphicsComponent, new InputComponent, new PhysicsComponent)
 {
 	m_window.setVerticalSyncEnabled(true);
 	m_window.setKeyRepeatEnabled(false);
